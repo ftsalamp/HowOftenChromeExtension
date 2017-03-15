@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "How often do I visit this site?",
+  "description": "This extension shows how many times you have visited the current page.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "options_page": "options.html"
+  },
+  "permissions": [
+    "activeTab",
+    "history",
+    "storage"
+],
+"content_scripts": [
+    {
+      "matches": ["file:///*/options.html"],
+      "css": ["css/jquery-ui.css"],
+      "js": ["js/jquery.min.js",
+            "js/jquery-ui.min.js"]
+    }
+  ]
+}

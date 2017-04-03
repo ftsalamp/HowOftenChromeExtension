@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', function() { //initialize slider
     document.getElementById("value").innerHTML="Current Value: "+$('#flat-slider').slider("option", "value"); //show slider value
 });
 
-  document.getElementById("flat-slider").addEventListener('mouseup', function(){
-    var temp=$('#flat-slider').slider("option", "value");
-    document.getElementById("value").innerHTML="Current Value: "+temp;
-    saveChanges();
+  document.getElementById("flat-slider").addEventListener('mouseup', function(){ //when the user releases the mouse
+    var temp=$('#flat-slider').slider("option", "value"); //get the slider's value
+    document.getElementById("value").innerHTML="Current Value: "+temp; //show the new value
+    saveChanges(); //save the new value
   });
 });
 

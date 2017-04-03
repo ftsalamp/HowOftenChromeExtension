@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() { //initialize slider
   $('#flat-slider').slider({
     orientation: 'horizontal',
     range:       false,
@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
     max:        72
   });
 
-  chrome.storage.sync.get('hours', function(resultt) {
-    if(isNaN(resultt.hours)){
+  chrome.storage.sync.get('hours', function(resultt) { //get saved hours value
+    if(isNaN(resultt.hours)){ //if there isn't a value saved fallback value is 3
       $('#flat-slider').slider({
         value:      3
       });
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         value:      resultt.hours
       });
     }
-    document.getElementById("value").innerHTML="Current Value: "+$('#flat-slider').slider("option", "value");
+    document.getElementById("value").innerHTML="Current Value: "+$('#flat-slider').slider("option", "value"); //show slider value
 });
 
   document.getElementById("flat-slider").addEventListener('mouseup', function(){
